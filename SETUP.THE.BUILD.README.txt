@@ -1,0 +1,19 @@
+Here are some notes for setting up the android sdk on linux:
+
+install stuff:
+  * android sdk
+  * sun java 6 (openjdk will fail miserably in subtle ways)
+  * ant
+  * add to the $PATH two directories from android sdk install location:
+    * tools
+    * platform-tools
+
+create the avd (android virtual device)
+ * run 'android'
+ * create the avd from the menu option
+ * start the emulator: emulator -avd NexusOne
+
+build and deploy the project
+ * 'ant debug'
+ * 'adb [-d] install -r bin/Android-Hello-debug.apk'
+   * -d option will install to phone over usb connection
