@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+  <EditText
+      android:id="@+id/watt_text"
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:text="watts"/>
+  <EditText
+      android:id="@+id/kilowatt_hour_text"
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:text="kw/h"/>
+  <Button
+      android:id="@+id/calculate_button"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Calculate"/>
+  <TextView
+      android:id="@+id/cost_per_year_text"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Cost Per Year"/>
+  <TextView
+      android:id="@+id/cost_per_day_text"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Cost per day"/>
+</LinearLayout>
+
