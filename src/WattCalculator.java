@@ -1,4 +1,4 @@
-package com.example.helloworld;
+package com.example.wattcalculator;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -8,7 +8,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import java.text.NumberFormat;
 
-public class HelloWorld extends Activity
+public class WattCalculator extends Activity
 {
     private Button mCalculateButton;
     private EditText mWattText;
