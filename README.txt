@@ -13,7 +13,7 @@ rate should they care.
 Additionally I need an excuse to learn about the Android Platform.
 
 TODO
-  [ ] incorporate the average rates and a state selector
+  [X] incorporate the average rates and a state selector
   [ ] make text entry more usable, eliminate 'calculate' button
   [ ] clean up the layout
   [ ] make it pretty (colors and effects?)

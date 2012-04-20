@@ -9,6 +9,12 @@
       android:layout_width="fill_parent"
       android:layout_height="wrap_content"
       android:text="watts"/>
+  <AutoCompleteTextView
+      android:id="@+id/state_autocomplete"
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:completionThreshold="1"
+      android:text="State"/>
   <EditText
       android:id="@+id/kilowatt_hour_text"
       android:layout_width="fill_parent"
