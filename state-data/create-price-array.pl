@@ -13,5 +13,6 @@ while (my $row = $csv->getline($fh)) {
     next unless $row->[0];
     my $code = Postal::US::State->code($row->[0]);
     next unless $code;
-    print qq/"$code", "$row->[2]",\n/;
+    my $kwh = $row->[2] * .01;
+    print qq/"$code", "$kwh",\n/;
 }

@@ -14,7 +14,7 @@ Additionally I need an excuse to learn about the Android Platform.
 
 TODO
   [X] incorporate the average rates and a state selector
-  [ ] make text entry more usable, eliminate 'calculate' button
+  [X] make text entry more usable, eliminate 'calculate' button
   [ ] clean up the layout
   [ ] make it pretty (colors and effects?)
   [ ] investigate a better name (considering the competitor apps)
