@@ -2,14 +2,14 @@ package com.example.wattcalculator;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.text.TextWatcher;
 import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.ArrayAdapter;
-import android.widget.AutoCompleteTextView;
 import java.lang.NumberFormatException;
 import java.text.NumberFormat;
 import java.util.HashMap;
@@ -45,6 +45,7 @@ public class WattCalculator extends Activity
 	mWattText.addTextChangedListener(mCalculateWatcher);
 	mKWhText.addTextChangedListener(mCalculateWatcher);
 	setupStateListener();
+	blankOutCalculationResults();
     }
 
     private void setupStateListener() {
@@ -67,6 +68,8 @@ public class WattCalculator extends Activity
 	    public void afterTextChanged(Editable s) {
 		if (canCalculationProceed()) {
 		    calculate();
+		} else {
+		    blankOutCalculationResults();
 		}
 	    }
 	    public void onTextChanged(CharSequence s, int start, int before, int count) {
@@ -76,6 +79,11 @@ public class WattCalculator extends Activity
 
 	    }
 	};
+
+    private void blankOutCalculationResults() {
+	mCostPerDayText.setText(formatCurrency(0.0));
+	mCostPerYearText.setText(formatCurrency(0.0));
+    }
 
     private boolean canCalculationProceed() {
 	return (isPositiveNumber(mWattText.getText().toString())
@@ -92,17 +100,15 @@ public class WattCalculator extends Activity
     }
 
     private void calculate() {
-	// todo: use BigDecimal instead of double for money values
 	double costPerDay = Double.valueOf(mWattText.getText().toString()) / 1000
 	    * Double.valueOf(mKWhText.getText().toString()) * 24;
 	double costPerYear = costPerDay * 365;
 
-	mCostPerDayText.setText(formatCurrency(costPerDay) + " Per Day");
-	mCostPerYearText.setText(formatCurrency(costPerYear)+ " Per Year");
+	mCostPerDayText.setText(formatCurrency(costPerDay));
+	mCostPerYearText.setText(formatCurrency(costPerYear));
     }
 
     private String formatCurrency(double money) {
-	// lifted from the internets
         NumberFormat formatter = NumberFormat.getCurrencyInstance();
         return formatter.format(money);
     }

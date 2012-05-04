@@ -1,37 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<TableLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
-  <EditText
-      android:id="@+id/watt_text"
-      android:layout_width="fill_parent"
-      android:layout_height="wrap_content"
-      android:selectAllOnFocus="true"
-      android:text="watts"/>
-  <AutoCompleteTextView
-      android:id="@+id/state_autocomplete"
-      android:layout_width="fill_parent"
-      android:layout_height="wrap_content"
-      android:completionThreshold="1"
-      android:selectAllOnFocus="true"
-      android:text="State"/>
-  <EditText
-      android:id="@+id/kilowatt_hour_text"
-      android:layout_width="fill_parent"
-      android:layout_height="wrap_content"
-      android:selectAllOnFocus="true"
-      android:text="kw/h"/>
-  <TextView
-      android:id="@+id/cost_per_year_text"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:text="Cost Per Year"/>
-  <TextView
-      android:id="@+id/cost_per_day_text"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:text="Cost per day"/>
-</LinearLayout>
+  <TableRow>
+    <TextView android:text="Watts"/>
+    <EditText
+	android:id="@+id/watt_text"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:selectAllOnFocus="true"/>
+  </TableRow>
+  <TableRow>
+    <TextView android:text="State"/>
+    <AutoCompleteTextView
+	android:id="@+id/state_autocomplete"
+	android:layout_width="80dip"
+	android:layout_height="wrap_content"
+	android:completionThreshold="1"
+	android:selectAllOnFocus="true"/>
+  </TableRow>
+  <TableRow>
+    <TextView android:text="kWh"/>
+    <EditText
+	android:id="@+id/kilowatt_hour_text"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:selectAllOnFocus="true"/>
+  </TableRow>
+  <TableRow>
+    <TextView android:text="Cost Per Year:"
+	      android:paddingRight="5dip"/>
+    <TextView
+	android:id="@+id/cost_per_year_text"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"/>
+  </TableRow>
+  <TableRow android:paddingTop="3dip">
+    <TextView android:text="Cost Per Day:"/>
+    <TextView
+	android:id="@+id/cost_per_day_text"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"/>
+  </TableRow>
+</TableLayout>
 
