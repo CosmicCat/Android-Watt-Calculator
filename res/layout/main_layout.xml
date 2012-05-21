@@ -11,28 +11,47 @@
 	android:layout_height="wrap_content"
 	android:selectAllOnFocus="true"/>
   </TableRow>
-  <TableRow>
-    <TextView android:text="State"/>
+  <TableRow android:id="@+id/state_row"
+	    android:visibility="gone">
+    <TextView
+	android:text="Choose state for average kWh"
+	android:layout_height="wrap_content"
+	android:textSize="9sp"
+        android:paddingRight="2dip"
+	/>
     <AutoCompleteTextView
 	android:id="@+id/state_autocomplete"
-	android:layout_width="80dip"
 	android:layout_height="wrap_content"
+	android:layout_width="fill_parent"
 	android:completionThreshold="1"
-	android:selectAllOnFocus="true"/>
+	android:selectAllOnFocus="true"
+	/>
+    <TextView
+	android:textSize="9sp"
+	android:text="[hide]"
+	android:textColor="#6D7CDD"
+	android:paddingLeft="3dip"
+        android:onClick="toggleStateVisibility"
+        android:clickable="true"
+	/>
   </TableRow>
   <TableRow>
     <TextView android:text="kWh"/>
     <EditText
 	android:id="@+id/kilowatt_hour_text"
-	android:layout_width="fill_parent"
+	android:layout_width="80dip"
 	android:layout_height="wrap_content"
 	android:selectAllOnFocus="true"/>
+    <ImageView android:src="@android:drawable/ic_menu_help"
+	       android:id="@+id/help_icon"
+	       android:onClick="toggleStateVisibility"/>
   </TableRow>
   <TableRow>
     <TextView android:text="Cost Per Year:"
 	      android:paddingRight="5dip"/>
     <TextView
 	android:id="@+id/cost_per_year_text"
+	android:textColor="#A7E188"
 	android:layout_width="wrap_content"
 	android:layout_height="wrap_content"/>
   </TableRow>
@@ -40,8 +59,8 @@
     <TextView android:text="Cost Per Day:"/>
     <TextView
 	android:id="@+id/cost_per_day_text"
+	android:textColor="#A7E188"
 	android:layout_width="wrap_content"
 	android:layout_height="wrap_content"/>
   </TableRow>
 </TableLayout>
-

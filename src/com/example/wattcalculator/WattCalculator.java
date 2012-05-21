@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TableRow;
 import android.widget.TextView;
 import java.lang.NumberFormatException;
 import java.text.NumberFormat;
@@ -111,5 +112,17 @@ public class WattCalculator extends Activity
     private String formatCurrency(double money) {
         NumberFormat formatter = NumberFormat.getCurrencyInstance();
         return formatter.format(money);
+    }
+
+    public void toggleStateVisibility(View v) {
+	TableRow stateRow = (TableRow)findViewById(R.id.state_row);
+	View helpIcon = findViewById(R.id.help_icon);
+	if (stateRow.getVisibility() == View.VISIBLE) {
+	    stateRow.setVisibility(View.GONE);
+	    helpIcon.setVisibility(View.VISIBLE);
+	} else {
+            stateRow.setVisibility(View.VISIBLE);
+	    helpIcon.setVisibility(View.GONE);
+	}
     }
 }
